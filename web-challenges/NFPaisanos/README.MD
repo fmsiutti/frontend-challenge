@@ -1,85 +1,38 @@
-# NFPaisanos | NFT Marketplace
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-### Requeriments
+## Getting Started
 
-To complete the challenge, you need to accomplish the following requirements:
-* Code the different sections of the NFPaisanos Figma file.
-* Integrate the UI with the API that we provide
+First, run the development server:
 
-Unfortunately our Backend doesn't have too much intelligence to give you the data filtered and ordered 😢. 
-So.., you need to do it by yourself. We trust in you! The force be with you 🥷.
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+```
 
-#### 🏆 The Paisano's Trophies 🏆
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-- Lets get inmmersive! Add animations and microinteractions to the UI!
-- The sound! Add sounds to the interactions in the UI 
-- Make it fully responsive! (Mobile, Tab, Desktop, Big Desktop)
-- Make it performant! Get +90 of Performance rate on Lighthouse
-- Make it accessible! Get +90 of Accesibility rate on Lighthouse
-- Respect the best practices! Get +90 of Best Practices on Lighthouse
-- Make it pretty! Setup eslint and prettier rules!
-- Make it installable! Make a PWA!
-- Time for SEO! Get +90 of SEO rate on Lighthouse
-- Time for Coverage! Get +70% of testing coverage!
+You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
 
+[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
 
-#### 🏆 The Manija Trophies 🏆
-- Add new features to the challenge!
+The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-### Design
+This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-You will find all the assets and design resources in [this Figma file](https://www.figma.com/file/qIdZeeeDZa4bRiUmatNTRG/NFPaisanos?node-id=2%3A658).
+## Learn More
 
-### API Docs
+To learn more about Next.js, take a look at the following resources:
 
-Read the [API Documentation](https://paisanos.notion.site/paisanos/NFPaisanos-Challenge-9c9fe549402d4d03918316d84f809dcb).
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-### Delivery
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-At the end of the challenge, send us the repo and a url with the challenge.
-We recommend:
+## Deploy on Vercel
 
-* [Vercel](https://vercel.com)
-* [Netlify](https://www.netlify.com/)
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-### Tech
-
-In this challenge, we are looking to see two techs
-
-* [Nextjs](https://nextjs.org/)
-* [Typescript](https://www.typescriptlang.org/)
-
-To manage animations, testing, style, APIs and state you can use whatever you want. 
-Here some of our recommendations:
-
-Style
-* [Styled Components](https://styled-components.com/)
-* [Emotion](https://emotion.sh/docs/introduction)
-* [Css Modules](https://github.com/css-modules/css-modules)
-
-Animations
-* [Framer Motion](https://www.framer.com/motion/)
-* [GSAP](https://greensock.com/gsap/)
-
-Testing
-* [Jest](https://jestjs.io/)
-* [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
-* [Enzyme](https://enzymejs.github.io/enzyme/)
-
-API 
-* [React Query](https://react-query.tanstack.com/)
-* [Axios](https://axios-http.com/docs/intro)
-
-State Managment
-* [Zustand](https://github.com/pmndrs/zustand)
-* [Context API](https://es.reactjs.org/docs/context.html)
-* [Redux Toolkit](https://redux-toolkit.js.org/)
-
-To make your code pretty
-* [Eslint](https://eslint.org/)
-* [Prettier](https://prettier.io/)
-
-Good Luck!! 
-
----
-Created with ❤️ by [Paisanos](https://www.paisanos.io/)
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.

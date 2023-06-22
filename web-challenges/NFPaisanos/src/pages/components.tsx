@@ -9,13 +9,13 @@ export default function Home() {
   return (
     <>
         <Header />
-        <Button type='main' text="Place a bid" />
+        <Button type='main'>Place a bid</Button>
         <br />
         <br />
-        <Button type='secondary' text="View Item" />
+        <Button type='secondary'>View Item</Button>
         <br />
         <br />
-        <Button type='light' text="Connect Wallet" />
+        <Button type='light'>Connect Wallet</Button>
     </>
   )
 }

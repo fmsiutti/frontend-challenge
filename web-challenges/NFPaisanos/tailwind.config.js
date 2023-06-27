@@ -57,8 +57,8 @@ module.exports = {
         }
       },
       animation: {
-        'dvdBounce': "moveX 2s linear 0s infinite alternate, moveY 3.4s linear 0s infinite alternate",
-        'dvdBounceSlow': "moveX 8.5s linear 0s infinite alternate, moveY 5s linear 0s infinite alternate"
+        'dvdBounce': "moveX 5s linear 0s infinite alternate, moveY 8.5s linear 0s infinite alternate",
+        'dvdBounceSlow': "moveX 17s linear 0s infinite alternate, moveY 10s linear 0s infinite alternate"
       }
     },
   },

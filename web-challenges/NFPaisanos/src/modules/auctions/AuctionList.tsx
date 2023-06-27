@@ -29,7 +29,7 @@ export default function AuctionList() {
       setTimeout(() => {
         getAuctions()
         setLoading(false)
-      }, 1000)
+      }, 3000)
     }
   }, [isVisible, getAuctions])
 
@@ -73,7 +73,7 @@ export default function AuctionList() {
         { renderedAuctionList }
       </div>
       <div ref={ref} className="flex justify-center py-8">
-        <Button className={`${isVisible && loading  ? '' : 'hidden' } w-36 py-2`} type="light"><span className="flex items-center justify-between"><Image className="animate-spin" src={Spinner} width={24} height={24} alt="Loading" /> Load more</span></Button>
+        <Button full={false} className={`${isVisible && loading  ? '' : 'hidden' } w-36 py-2`} type="light"><span className="flex items-center justify-between"><Image className="animate-spin" src={Spinner} width={24} height={24} alt="Loading" /> Load more</span></Button>
       </div>
     </>
     )

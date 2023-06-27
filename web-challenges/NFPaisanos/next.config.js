@@ -6,7 +6,8 @@ const withPWA = require('next-pwa')({
   cacheStartUrl: false,
   buildExcludes: [/api\/.*$/],
   fallbacks: {
-    document: '/_offline'
+    document: '/_offline',
+    image: '/placeholder.png'
   }
 })
 

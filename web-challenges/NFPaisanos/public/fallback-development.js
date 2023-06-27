@@ -11,7 +11,9 @@ self.fallback = async request => {
         ignoreSearch: true
       });
     case 'image':
-      if (false) {}
+      if (true) return caches.match("/placeholder.png", {
+        ignoreSearch: true
+      });
     case 'audio':
       if (false) {}
     case 'video':

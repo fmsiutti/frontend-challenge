@@ -27,10 +27,10 @@ export default function NavMenu(){
                 </button>
                 <ul className="flex flex-col mt-2 font-medium md:flex-row md:space-x-8 md:mt-0">
                     <li className="py-4 md:py-0">
-                        <Link onClick={toggleMenu} href="/" className="text-sm block py-2 pr-4 pl-3 text-light-grey hover:text-white">Discover</Link>
+                        <Link onClick={toggleMenu} href="/discover" className="text-sm block py-2 pr-4 pl-3 text-light-grey hover:text-white">Discover</Link>
                     </li>
                     <li className="py-4 md:py-0">
-                        <Link onClick={toggleMenu} href="/" className="text-sm block py-2 pr-4 pl-3 text-light-grey hover:text-white">What we do</Link>
+                        <Link onClick={toggleMenu} href="/whatwedo" className="text-sm block py-2 pr-4 pl-3 text-light-grey hover:text-white">What we do</Link>
                     </li>
                 </ul>
                 <div className="flex md:order-2 py-4 md:py-0">

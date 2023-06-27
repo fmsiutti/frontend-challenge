@@ -3,12 +3,7 @@ import Heart from '../../assets/Heart.svg'
 import HeartFull from '../../assets/HeartFull.svg'
 import { useState } from 'react';
 
-interface Favourite {
-    // active?: boolean;
-    className?: string;
-}
-
-export default function Favourite({ className = ''}:Favourite) {
+export default function Favourite({ className = ''}) {
 
     const [active, setActive] = useState(false)
 

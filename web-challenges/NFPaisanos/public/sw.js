@@ -69,7 +69,7 @@ if (!self.define) {
 }
 define(['./workbox-84fe61df'], (function (workbox) { 'use strict';
 
-  importScripts("fallback-development.js", "worker-development.js");
+  importScripts("fallback-development.js");
   self.skipWaiting();
   workbox.clientsClaim();
   workbox.registerRoute(/.*/i, new workbox.NetworkOnly({

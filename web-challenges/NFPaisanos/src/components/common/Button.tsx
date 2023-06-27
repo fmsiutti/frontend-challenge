@@ -1,7 +1,7 @@
 import { Button } from '@/types/Common'
 
-export default function Button({ children, type, onClick, className = '' }:Button) {
-    let classes = ' w-full rounded-3xl border-2 '
+export default function Button({ children, type, full = true, onClick, className = '' }:Button) {
+    let classes = ` ${full && 'w-full' } rounded-3xl border-2 `
     if(type == 'primary'){
         classes += 'bg-main-blue border-main-blue py-2 px-4 hover:bg-light-blue hover:border-light-blue'
     }else if (type == 'secondary'){

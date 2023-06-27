@@ -25,6 +25,7 @@ export interface Chip {
 export interface Button {
     children: ReactElement | string;
     type: string;
+    full?: boolean;
     onClick?: () => void;
     className?: string;
 }

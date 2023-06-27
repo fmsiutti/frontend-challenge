@@ -3,7 +3,11 @@
 const withPWA = require('next-pwa')({
   dest: 'public',
   dynamicStartUrl: false,
-  cacheStartUrl: false
+  cacheStartUrl: false,
+  buildExcludes: [/api\/.*$/],
+  fallbacks: {
+    document: '/_offline'
+  }
 })
 
 const withImages = require('next-images');

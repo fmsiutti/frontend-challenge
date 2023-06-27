@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import { RoundedButton } from '@/types/Common'
+import useSound from 'use-sound';
 
 export default function RoundedButton({ icon, type, onClick = () => {}, size = '', className = '' }:RoundedButton) {
     let classes = 'rounded-full flex justify-center items-center '
@@ -15,7 +16,9 @@ export default function RoundedButton({ icon, type, onClick = () => {}, size = '
         classes += 'h-[40px] w-[40px] '
     }
 
+    const [playSound] = useSound('/sounds/turn-off.mp3')
+
     return (
-        <button onClick={onClick} className={classes + className}><Image src={icon} alt="icon" width={24} height={24} /></button>
+        <button onClick={() => { playSound();onClick()}} className={classes + className}><Image src={icon} alt="icon" width={24} height={24} /></button>
     )
 }

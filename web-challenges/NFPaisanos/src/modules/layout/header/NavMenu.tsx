@@ -2,14 +2,23 @@ import Link from "next/link"
 import { Button, CloseButton } from '@/components/common';
 import { useState } from "react";
 import { Hamburger } from '@/components/layout';
+import useSound from 'use-sound';
 
 export default function NavMenu(){
 
     const [loggedIn, setLoggedIn] = useState(false)
     const [menuOpen, setMenuOpen] = useState(false)
 
+    const [playSoundIn] = useSound('/sounds/turn-on.mp3')
+    const [playSoundOut] = useSound('/sounds/turn-off.mp3')
+
     const toggleLogin = () => {
         setLoggedIn(!loggedIn)
+        if(loggedIn){
+            playSoundOut()
+        }else{
+            playSoundIn()
+        }
     }
 
     const toggleMenu = () => {

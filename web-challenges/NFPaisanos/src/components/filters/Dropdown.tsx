@@ -5,12 +5,16 @@ import ExpandMore from '@/assets/ExpandMore.svg'
 import ExpandLess from '@/assets/ExpandLess.svg'
 import { RoundedButton } from "../common"
 import DropdownItem from './DropdownItem';
+import useSound from 'use-sound';
 
 export default function Dropdown({def, list, handleSelect, type = '', multiSelected = [], initialState = false, multi = false, className = ''}:Dropdown) {
     const [expanded, setExpanded] = useState(initialState)
 
+    const [playSound] = useSound('/sounds/turn-on.mp3')
+
     const handleClick = (selectedItem:number) => {
         handleSelect(selectedItem)
+        playSound()
         if(!multi){
             toggleExpand();
         }
@@ -18,6 +22,7 @@ export default function Dropdown({def, list, handleSelect, type = '', multiSelec
 
     const toggleExpand = () => {
         setExpanded(!expanded)
+        playSound()
     }
     const renderedList = list.map((item, index) => <DropdownItem onClick={() => {handleClick(item[1]) }} selected={multiSelected.includes(item[1])} expanded={expanded} value={`${item[1]}`} type={type} key={index} label={item[0]} />)
 

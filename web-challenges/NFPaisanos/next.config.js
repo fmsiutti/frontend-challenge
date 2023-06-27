@@ -2,7 +2,8 @@
 
 const withPWA = require('next-pwa')({
   dest: 'public',
-  dynamicStartUrl: false
+  dynamicStartUrl: false,
+  cacheStartUrl: false
 })
 
 const withImages = require('next-images');

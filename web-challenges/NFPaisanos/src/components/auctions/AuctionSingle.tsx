@@ -1,14 +1,23 @@
 import Image from 'next/image'
 
-import { AuctionProps } from '../../interfaces'
+import { Auction } from '../../types'
 
-import { Author, Button, RoundedButton } from '../common/'
 
-import ArrowRight from '../../assets/ArrowRight.svg'
-import ArrowLeft from '../../assets/ArrowLeft.svg'
+import { Author, Button, } from '../common'
 
-export default function AuctionSingle({ title, instantPrice, type, highestBid, stock, likes, author, authorAvatar, attributes, createdAt, endsAt, media, bidUsers }:AuctionProps) {
-    console.log(attributes)
+import { toHumanNumber } from '../../utils/numbers.utils';
+
+import { useConversion } from '../../store/PriceStore';
+import { useSetSelectedPopular } from '../../store/AuctionStore';
+
+export default function AuctionPopularItem({ title, instantPrice, type, highestBid, stock, likes, author, authorAvatar, attributes, createdAt, endsAt, media, bidUsers }:Auction) {
+
+    const conversion = useConversion()
+    const setSelectedPopular = useSetSelectedPopular()
+
+    // const usdPrice = toHumanNumber((parseFloat(instantPrice) * conversion).toFixed(2), 2)
+    const usdPrice = toHumanNumber((parseFloat(instantPrice) * conversion).toFixed(2), 2)
+
     return (
         <>
             <div className="md:flex justify-between" >
@@ -28,7 +37,7 @@ export default function AuctionSingle({ title, instantPrice, type, highestBid, s
                     <div className="rounded-3xl bg-main-grey p-8 mt-4 text-center">
                         <p className="text-xl pb-2">Current Bid</p>
                         <p className="text-6xl font-semibold pb-2">{highestBid}</p>
-                        <p className="text-3xl text-light-grey font-semibold pb-10">$3,618.36</p> {/* HACER DINAMICO */}
+                        <p className="text-3xl text-light-grey font-semibold pb-10">${usdPrice}</p> {/* HACER DINAMICO */}
                         <p className="text-xl pb-4">Auction ending in</p>
                         <div className="max-w-[220px] mx-auto flex justify-between pb-2">
                             <div>
@@ -47,11 +56,6 @@ export default function AuctionSingle({ title, instantPrice, type, highestBid, s
                     </div>
                     <div className="mt-6">
                         <Button className="mt-2" type='primary' >Place a bid</Button>
-                        <Button className="mt-2" type='secondary' >View item</Button>
-                    </div>
-                    <div className="mt-6 flex">
-                        <RoundedButton type="secondary" icon={ArrowLeft} />
-                        <RoundedButton type="secondary" className="ml-2" icon={ArrowRight} />
                     </div>
                 </div>
             </div>

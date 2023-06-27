@@ -1,7 +1,7 @@
 import AuctionList from './AuctionList'
-import AuctionSingle from './AuctionSingle';
+import AuctionPopular from './AuctionPopular';
 
 export {
     AuctionList,
-    AuctionSingle
+    AuctionPopular
 }

@@ -1,12 +1,16 @@
-import MockAuctions from '../../mock/auction'
 import AuctionListItem from './AuctionListItem'
+import { useFilteredAuctions, useGetAuctions } from '../../store/AuctionStore';
+import { useEffect } from 'react';
 
 export default function AuctionList() {
-  const colors = MockAuctions.map((MockAuction) => MockAuction.attributes.color)
-  const filteredColors = colors.filter((color, index) => colors.indexOf(color) === index)
-  console.log(filteredColors)
 
-  const renderedAuctionList = MockAuctions.map((MockAuction, index) => {
+  const getAuctions = useGetAuctions()
+  const auctions = useFilteredAuctions()
+  useEffect(() => {
+    getAuctions()
+  }, [getAuctions])
+
+  const renderedAuctionList = auctions.map((auction, index) => {
     const {
       instantPrice,
       highestBid,
@@ -20,7 +24,7 @@ export default function AuctionList() {
       attributes,
       media,
       type,
-    } = MockAuction
+    } = auction
   
     return <AuctionListItem 
       key={index}
@@ -40,7 +44,7 @@ export default function AuctionList() {
   })
 
   return (
-    <div className="grid grid-cols-1 gap-x-4 gap-y-4 sm:grid-cols-2 xl:grid-cols-3 xxl:grid-cols-4 xxl:gap-x-8">
+    <div className="grid grid-cols-1 gap-x-7 gap-y-7 sm:grid-cols-3 xxl:grid-cols-4">
       { renderedAuctionList }
     </div>
   )

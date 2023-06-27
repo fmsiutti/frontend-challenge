@@ -1,6 +1,6 @@
 import type { User, Attributes, Media } from '../types';
 
-export default interface AuctionProps {
+export type Auction = {
     title: string;
     instantPrice: string;
     highestBid: string;

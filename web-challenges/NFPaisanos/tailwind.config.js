@@ -6,11 +6,14 @@ module.exports = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    fontFamily: {
+      'sans': ['DM Sans', 'Roboto', 'sans-serif'],
+      'alternative': ['Poppins', 'Roboto', 'sans-serif']
+    },
     extend: {
       container: {
         padding: {
-          DEFAULT: '1rem',
-          sm: '2rem',
+          DEFAULT: '2rem',
           lg: '4rem',
           xl: '5rem',
           '2xl': '6rem',
@@ -36,7 +39,8 @@ module.exports = {
         'light-blue': 'rgb(108, 151, 252)'
       },
       fontSize: {
-        'xs': '0.77rem'
+        'smaller': '0.84rem',
+        '4xl': '2rem'
       },
       padding: {
         '0.75': '.2rem',
@@ -44,5 +48,25 @@ module.exports = {
       }
     },
   },
+  safelist: [
+    'border-custom-green',
+    'border-custom-blue',
+    'border-custom-black',
+    'border-custom-pink',
+    'border-custom-orange',
+    'border-custom-red',
+    'bg-custom-green',
+    'bg-custom-blue',
+    'bg-custom-black',
+    'bg-custom-pink',
+    'bg-custom-orange',
+    'bg-custom-red',
+    'text-custom-green',
+    'text-custom-blue',
+    'text-custom-black',
+    'text-custom-pink',
+    'text-custom-orange',
+    'text-custom-red',
+  ],
   plugins: [],
 }

@@ -8,6 +8,8 @@ import Input from './Input';
 import Dropdown from './Dropdown/Dropdown';
 import RangeSlider from './RangeSlider';
 import CloseButton from './CloseButton';
+import Chip from './Chip';
+import Logo from './Logo';
 
 export {
     Badge,
@@ -19,5 +21,7 @@ export {
     Input,
     Dropdown,
     RangeSlider,
-    CloseButton
+    CloseButton,
+    Chip,
+    Logo
 }

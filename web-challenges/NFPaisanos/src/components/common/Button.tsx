@@ -3,15 +3,16 @@ import type { ReactElement } from 'react'
 interface Button {
     children: ReactElement | string;
     type: string;
+    onClick?: () => void;
     className?: string;
 }
 
-export default function Button({ children, type, className = '' }:Button) {
+export default function Button({ children, type, onClick, className = '' }:Button) {
     let classes = ' w-full rounded-3xl border-2 '
     if(type == 'primary'){
-        classes += 'bg-main-blue border-main-blue py-2 px-4 text-lg hover:bg-light-blue hover:border-light-blue'
+        classes += 'bg-main-blue border-main-blue py-2 px-4 hover:bg-light-blue hover:border-light-blue'
     }else if (type == 'secondary'){
-        classes += 'border-medium-grey py-2 px-4 text-lg hover:bg-light-grey'
+        classes += 'border-medium-grey py-2 px-4 hover:bg-light-grey'
     }else if (type == 'light'){
         classes += 'border-light-grey text-sm py-1.5 px-4 hover:bg-light-grey'
     }else if (type == 'no-border'){
@@ -19,6 +20,6 @@ export default function Button({ children, type, className = '' }:Button) {
     }
 
     return (
-        <button className={className + classes}>{children}</button>
+        <button onClick={onClick} className={className + classes}>{children}</button>
     )
 }

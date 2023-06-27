@@ -4,16 +4,25 @@ interface RoundedButton {
     type: string;
     icon: string;
     className?: string;
+    size?: string;
+    onClick?: () => void;
 }
 
-export default function RoundedButton({ icon, type, className = '' }:RoundedButton) {
-    let classes = 'h-[45px] w-[45px] rounded-full flex justify-center items-center'
+export default function RoundedButton({ icon, type, onClick = () => {}, size = '', className = '' }:RoundedButton) {
+    let classes = 'rounded-full flex justify-center items-center '
     if(type == 'main'){
         classes += ' bg-main-blue hover:bg-light-blue '
     }else if(type == 'secondary'){
         classes += ' border-medium-grey hover:border-2 '
     }
+
+    if(size == 'sm'){
+        classes += 'h-[32px] w-[32px] '
+    }else {
+        classes += 'h-[40px] w-[40px] '
+    }
+
     return (
-        <button className={classes + className}><Image src={icon} alt="icon" width={25} height={25} /></button>
+        <button onClick={onClick} className={classes + className}><Image src={icon} alt="icon" width={24} height={24} /></button>
     )
 }

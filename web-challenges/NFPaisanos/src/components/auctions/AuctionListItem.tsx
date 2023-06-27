@@ -44,7 +44,7 @@ export default function AuctionList({ title, instantPrice, attributes, type, hig
                         <Divider /> 
                     </div>
                     <div className="flex py-3 justify-between text-light-grey">
-                        <span className="text-xs basis-4/6"><Image className="inline" src={TrendingUp} width={20} height={20} alt="Highest bid" /> Highest bid <span className="text-white">{highestBid}</span></span>
+                        <span className="whitespace-nowrap text-xs basis-4/6"><Image className="inline" src={TrendingUp} width={20} height={20} alt="Highest bid" /> Highest bid <span className="text-white">{highestBid}</span></span>
                         <span className="text-right text-xs basis-2/6">New bid 🔥</span>
                     </div>
                 </div>

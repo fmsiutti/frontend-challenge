@@ -19,20 +19,20 @@ export default function Home() {
 
   return (
     <>
-      <div className="container m-auto pt-8 pb-12">
+      <div className="container pt-8 pb-12">
         <AuctionPopular />
       </div>
-      <div className="flex container m-auto">
+      <div className="flex container">
         <DynamicSearchBar />
       </div>
-      <div className="container m-auto mb-6 mt-4">
+      <div className="container mb-6 mt-4">
         <DynamicCategories />
       </div>
-      <div className="md:flex container m-auto">
-        <div className="basis-1/4 md:max-w-[25%] md:pr-4">
+      <div className="md:flex container">
+        <div className="md:basis-1/2 md:pr-8 lg:pr-4 lg:basis-1/3 xl:pr-4 xl:basis-1/4 xl:max-w-[25%]">
           <DynamicFilters />
         </div>
-        <div className="basis-3/4 md:pl-4">
+        <div className="md:basis-1/2 md:pl-8 lg:basis-2/3 lg:pl-4 xl:basis-3/4 xl:pl-4">
           <DynamicAuctionList />
         </div>
       </div>

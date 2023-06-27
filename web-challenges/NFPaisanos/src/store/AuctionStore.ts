@@ -15,13 +15,14 @@ interface Filters {
 }
 
 interface AuctionState {
-    getAuctions: () => void;
-    getPopular: () => void;
-    setSelectedPopular: (direction:number) => void;
     auctions: Auction[];
     filteredAuctions: Auction[];
     popular: Auction[];
     selectedPopular: number;
+    getAuctions: () => void;
+    getLimitAuctions: () => void;
+    getPopular: () => void;
+    setSelectedPopular: (direction:number) => void;
     filterAuctions: (filters:Filters) => void;
 }
 
@@ -86,6 +87,19 @@ const useAuctionStore = create<AuctionState>((set) => ({
             })
             .catch(err => {console.log(err)})
     },
+    getLimitAuctions: async () => {
+        fetch('/api/getAuctions')
+            .then(res => res.json())
+            .then(auctions => {
+                set(state => {
+                    return {
+                        auctions: auctions.slice(0, 9),
+                        filteredAuctions: auctions.slice(0, 9)
+                    }
+                })
+            })
+            .catch(err => {console.log(err)})
+    }
 }))
 
 
@@ -96,4 +110,5 @@ export const useSelectedPopular = () => useAuctionStore(state => state.selectedP
 export const useSetSelectedPopular = () => useAuctionStore(state => state.setSelectedPopular)
 export const useGetPopular = () => useAuctionStore(state => state.getPopular)
 export const useGetAuctions = () => useAuctionStore(state => state.getAuctions)
+export const useGetLimitAuctions = () => useAuctionStore(state => state.getLimitAuctions)
 export const useFilterAuctions = () => useAuctionStore(state => state.filterAuctions)

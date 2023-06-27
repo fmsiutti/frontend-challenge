@@ -45,6 +45,20 @@ module.exports = {
       padding: {
         '0.75': '.2rem',
         '1.25': '.3rem'
+      },
+      keyframes: {
+        moveX: {
+          '0%': { left: '0' },
+          '100%': { left: 'calc(100% - 32px)' }
+        },
+        moveY: {
+          '0%': { top: '0' },
+          '100%': { top: 'calc(100% - 32px)' },
+        }
+      },
+      animation: {
+        'dvdBounce': "moveX 2s linear 0s infinite alternate, moveY 3.4s linear 0s infinite alternate",
+        'dvdBounceSlow': "moveX 8.5s linear 0s infinite alternate, moveY 5s linear 0s infinite alternate"
       }
     },
   },

@@ -1,19 +1,9 @@
 import React, { useState } from 'react';
+import { Dropdown } from '@/types/FIlters';
 
-interface Dropdown {
-    def: string;
-    list: [string, number][];
-    className?: string;
-    initialState?: boolean;
-    type?: string;
-    multi?: boolean;
-    multiSelected?: number[];
-    handleSelect: (selection:number) => void
-}
-
-import { RoundedButton } from ".."
-import ExpandMore from '../../../assets/ExpandMore.svg'
-import ExpandLess from '../../../assets/ExpandLess.svg'
+import ExpandMore from '@/assets/ExpandMore.svg'
+import ExpandLess from '@/assets/ExpandLess.svg'
+import { RoundedButton } from "../common"
 import DropdownItem from './DropdownItem';
 
 export default function Dropdown({def, list, handleSelect, type = '', multiSelected = [], initialState = false, multi = false, className = ''}:Dropdown) {

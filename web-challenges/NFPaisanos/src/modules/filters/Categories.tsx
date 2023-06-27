@@ -1,6 +1,6 @@
-import { Chip } from '../common';
-import { useSelectedCategory, useSetSelectedCategory } from '../../store/FiltersStore';
-import { CATEGORIES } from '../../config/constants';
+import { Chip } from '@/components/common';
+import { useSelectedCategory, useSetSelectedCategory } from '@/store/FiltersStore';
+import { CATEGORIES } from '@/config/constants';
 
 export default function Categories() {
 

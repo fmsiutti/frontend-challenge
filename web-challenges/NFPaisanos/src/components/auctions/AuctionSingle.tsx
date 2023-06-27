@@ -3,7 +3,8 @@ import Image from 'next/image'
 import { Auction } from '../../types'
 
 
-import { Author, Button, } from '../common'
+import { Button } from '../common'
+import Author from './Author';
 
 import { toHumanNumber } from '../../utils/numbers.utils';
 

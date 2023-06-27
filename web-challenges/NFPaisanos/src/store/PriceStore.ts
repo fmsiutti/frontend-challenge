@@ -1,5 +1,5 @@
 import { create } from 'zustand'
-import { parseNumber } from '../utils/numbers.utils';
+import { parseNumber } from '@/utils/numbers.utils';
 
 interface PriceState {
     getPrice: () => void;

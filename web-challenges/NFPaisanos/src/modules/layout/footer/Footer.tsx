@@ -1,5 +1,5 @@
-import Divider from '../../common/Divider';
-import Logo from '../../common/Logo';
+import { Divider } from '@/components/common';
+import { Logo } from '@/components/layout';
 
 export default function Footer(){
 

@@ -1,9 +1,4 @@
-interface Chip {
-    content: string;
-    active: boolean;
-    className?: string;
-    onClick?: () => void
-}
+import { Chip } from "@/types/Common"
 
 export default function Chip({ content, active, onClick, className= "" }:Chip) {
 

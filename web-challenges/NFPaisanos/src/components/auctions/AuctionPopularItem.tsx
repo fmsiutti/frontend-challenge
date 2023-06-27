@@ -3,7 +3,8 @@ import Image from 'next/image'
 import { Auction } from '../../types'
 
 
-import { Author, Button, RoundedButton } from '../common'
+import { Button, RoundedButton } from '../common'
+import Author from './Author';
 
 import ArrowRight from '../../assets/ArrowRight.svg'
 import ArrowLeft from '../../assets/ArrowLeft.svg'

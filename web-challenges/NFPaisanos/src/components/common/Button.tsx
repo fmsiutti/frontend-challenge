@@ -1,11 +1,4 @@
-import type { ReactElement } from 'react'
-
-interface Button {
-    children: ReactElement | string;
-    type: string;
-    onClick?: () => void;
-    className?: string;
-}
+import { Button } from '@/types/Common'
 
 export default function Button({ children, type, onClick, className = '' }:Button) {
     let classes = ' w-full rounded-3xl border-2 '

@@ -1,10 +1,10 @@
 import { useEffect } from 'react';
 
-import { Dropdown, Divider, RangeSlider } from '../common';
-import ResetFilters from './ResetFilters';
+import { Divider } from '@/components/common';
+import { ResetFilters, Dropdown, RangeSlider } from '@/components/filters';
 
-import { capitalize } from '../../utils/string.utils';
-import { useAuctions, useFilterAuctions } from '../../store/AuctionStore';
+import { capitalize } from '@/utils/string.utils';
+import { useAuctions, useFilterAuctions } from '@/store/AuctionStore';
 
 import { useSetOrderByDate, useSetOrderByLikes, useOrderByDate, useOrderByLikes, useSelectedColors, useSetSelectedColors, useClearFilters, usePriceRange, useSetPriceRange, useColors, useSetColors, useSelectedCategory, useSelectedPriceRange, useSetSelectedPriceRange, useSearch } from '../../store/FiltersStore';
 

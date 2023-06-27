@@ -1,10 +1,12 @@
 import Image from 'next/image'
 
-import { Auction } from '../../types'
-import TrendingUp from '../../assets/TrendingUp.svg'
-import Bid from '../../assets/Bid.svg'
+import { Auction } from '@/types/Auction'
+import TrendingUp from '@/assets/TrendingUp.svg'
+import Bid from '@/assets/Bid.svg'
 import Favourite from './Favourite';
-import { Button, Bidder, Divider, Badge } from '../common';
+import { Button, Divider } from '../common';
+import Bidder from './Bidder';
+import Badge from './Badge';
 
 export default function AuctionList({ title, instantPrice, attributes, type, highestBid, stock, likes, author, authorAvatar, createdAt, endsAt, media, bidUsers }:Auction) {
     

@@ -1,9 +1,9 @@
 import { create } from 'zustand'
-import { Auction } from '../types';
-import { compareDates } from '../utils/dates.utils';
-import { compareNumbers } from '../utils/numbers.utils';
-import { DEFAULT_CATEGORY } from '../config/constants';
-import { sanitizeString } from '../utils/string.utils';
+import { Auction } from '@/types/Auction';
+import { compareDates } from '@/utils/dates.utils';
+import { compareNumbers } from '@/utils/numbers.utils';
+import { DEFAULT_CATEGORY } from '@/config/constants';
+import { sanitizeString } from '@/utils/string.utils';
 
 interface Filters {
     colors: string[];

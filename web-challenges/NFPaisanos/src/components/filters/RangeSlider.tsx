@@ -1,12 +1,5 @@
-import { useState } from "react"
-
 import ReactSlider from 'react-slider'
-
-interface RangeSlider {
-    min: number;
-    max: number;
-    handleChange: (values:[number, number]) => void
-}
+import { RangeSlider } from '@/types/FIlters'
 
 export default function RangeSlider({ min, max, handleChange }:RangeSlider) {
 

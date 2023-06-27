@@ -1,11 +1,4 @@
-import { RefObject } from "react"
-
-interface Input {
-    placeHolder: string;
-    className?: string;
-    onChange: (value:string) => void;
-    inputRef?: RefObject<HTMLInputElement>
-}
+import { Input } from '@/types/Common'
 
 export default function Input({ placeHolder, onChange, inputRef, className = '' }:Input) {
     let classes = ' bg-transparent color-white w-full focus:outline-0 placeholder-white'

@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { Button, CloseButton } from '@/components/common';
 import { useState } from "react";
-import Hamburger from './Hamburger';
+import { Hamburger } from '@/components/layout';
 
 export default function NavMenu(){
 
@@ -25,7 +25,7 @@ export default function NavMenu(){
                 <button onClick={toggleMenu} className="md:hidden absolute right-6 top-6">
                     <CloseButton />
                 </button>
-                <ul className="flex flex-col mt-2 md:mt-4 font-medium md:flex-row md:space-x-8 md:mt-0">
+                <ul className="flex flex-col mt-2 font-medium md:flex-row md:space-x-8 md:mt-0">
                     <li className="py-4 md:py-0">
                         <Link onClick={toggleMenu} href="/" className="text-sm block py-2 pr-4 pl-3 text-light-grey hover:text-white">Discover</Link>
                     </li>

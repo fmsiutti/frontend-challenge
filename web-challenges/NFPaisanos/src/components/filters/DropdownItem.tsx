@@ -1,13 +1,5 @@
 import React, { useState } from 'react';
-
-interface DropdownItem {
-    expanded?: boolean;
-    type?: string;
-    value: string;
-    label: string;
-    onClick: () => void;
-    selected?: boolean;
-}
+import { DropdownItem } from '@/types/FIlters';
 
 export default function DropdownItem({onClick, type = '', selected = false, expanded = false, value, label}:DropdownItem) {
     

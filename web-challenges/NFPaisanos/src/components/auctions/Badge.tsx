@@ -1,9 +1,4 @@
-interface Badge {
-    content: string;
-    color: string;
-    fill: boolean;
-    className?: string;
-}
+import { Badge } from '@/types/Auction'
 
 export default function Badge({ content, color, fill, className = '' }:Badge) {
     let borderColor = `border-custom-${color}`

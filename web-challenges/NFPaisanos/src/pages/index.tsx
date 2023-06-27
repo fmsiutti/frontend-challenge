@@ -1,14 +1,12 @@
-import { AuctionList, AuctionPopular } from '../components/auctions';
-import { Filters } from '../components/filters';
-import { SearchBar } from '../components/searchBar';
-import { Categories } from '../components/filters';
+import { AuctionList, AuctionPopular } from '@/modules/auctions';
+import { Filters, Categories, SearchBar } from '@/modules/filters';
 
 export default function Home() {
 
   return (
     <>
       <div className="container m-auto pt-8 pb-12">
-          <AuctionPopular />
+        <AuctionPopular />
       </div>
       <div className="flex container m-auto">
         <SearchBar />

@@ -1,6 +1,6 @@
-import { Input, RoundedButton } from "../common"
-import Search from '../../assets/Search.svg'
-import { useSetSearch } from '../../store/FiltersStore';
+import { Input, RoundedButton } from "@/components/common"
+import Search from '@/assets/Search.svg'
+import { useSetSearch } from '@/store/FiltersStore';
 import { useRef } from 'react';
 
 export default function SearchBar() {

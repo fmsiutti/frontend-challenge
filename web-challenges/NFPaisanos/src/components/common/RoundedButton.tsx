@@ -1,12 +1,5 @@
 import Image from 'next/image'
-
-interface RoundedButton {
-    type: string;
-    icon: string;
-    className?: string;
-    size?: string;
-    onClick?: () => void;
-}
+import { RoundedButton } from '@/types/Common'
 
 export default function RoundedButton({ icon, type, onClick = () => {}, size = '', className = '' }:RoundedButton) {
     let classes = 'rounded-full flex justify-center items-center '

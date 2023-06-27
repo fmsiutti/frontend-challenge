@@ -1,10 +1,5 @@
 import Image from 'next/image'
-
-interface Bidder {
-    image: string;
-    name: string;
-    index?: number;
-}
+import { Bidder } from '@/types/Auction'
 
 export default function Bidder({ image, name, index = 0 }:Bidder) {
     return (

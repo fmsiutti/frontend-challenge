@@ -1,7 +1,7 @@
 import { create } from 'zustand'
-import { ORDER_NEWEST, ORDER_MOST_LIKES, DEFAULT_COLOR_VALUE, DEFAULT_CATEGORY } from '../config/constants';
-import { Auction } from '../types/Auction';
-import { toFixedNumber } from '../utils/numbers.utils';
+import { ORDER_NEWEST, ORDER_MOST_LIKES, DEFAULT_COLOR_VALUE, DEFAULT_CATEGORY } from '@/config/constants';
+import { Auction } from '@/types/Auction';
+import { toFixedNumber } from '@/utils/numbers.utils';
 
 interface FiltersState {
     orderByDate: number;

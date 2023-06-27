@@ -1,7 +1,9 @@
-import Filters from './Filters';
-import Categories from './Categories';
+import ResetFilters from './ResetFilters';
+import Dropdown from './Dropdown';
+import RangeSlider from './RangeSlider';
 
 export {
-    Filters,
-    Categories
+    ResetFilters,
+    Dropdown,
+    RangeSlider
 }

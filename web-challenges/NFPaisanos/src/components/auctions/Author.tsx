@@ -1,11 +1,5 @@
 import Image from 'next/image'
-
-interface Author {
-    image?: string;
-    title: string;
-    text: string;
-    color?: string;
-}
+import { Author } from '@/types/Auction'
 
 export default function Author({ image, text, title, color }:Author) {
     return (

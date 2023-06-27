@@ -1,5 +1,5 @@
-import AuctionListItem from './AuctionListItem'
-import { useFilteredAuctions, useGetAuctions } from '../../store/AuctionStore';
+import { AuctionListItem } from '@/components/auctions'
+import { useFilteredAuctions, useGetAuctions } from '@/store/AuctionStore';
 import { useEffect } from 'react';
 
 export default function AuctionList() {

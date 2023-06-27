@@ -1,6 +1,6 @@
 import { CloseButton } from "../common"
 
-export default function ResetFilters({onClick}:{onClick:() => void}) {
+export default function ResetFilters({onClick = () => {}}) {
     return (
         <button onClick={onClick} className="flex">
             <CloseButton />

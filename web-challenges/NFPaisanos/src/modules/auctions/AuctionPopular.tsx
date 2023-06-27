@@ -1,8 +1,9 @@
-import AuctionPopularItem from './AuctionPopularItem';
-
-import { useGetPrice } from '../../store/PriceStore';
-import { usePopular, useSelectedPopular, useGetPopular } from '../../store/AuctionStore';
 import { useEffect } from 'react';
+
+import { AuctionPopularItem } from '@/components/auctions';
+
+import { useGetPrice } from '@/store/PriceStore';
+import { usePopular, useSelectedPopular, useGetPopular } from '@/store/AuctionStore';
 
 export default function AuctionPopular() {
 

@@ -24,7 +24,7 @@ export default function AuctionPopularItem({ title, instantPrice, type, highestB
         <>
             <div className="md:flex justify-between" >
                 <div className="image-container relative basis-full pb-8 md:pb-0 md:basis-7/12 md:pr-7">
-                    <Image priority sizes="(min-width: 768px) 20vw, 100vw" width={620} height={800} alt={title} className="rounded-2xl" src={media.image2x} />
+                    <Image priority sizes="(min-width: 768px) 20vw, 100vw" width={620} height={800} alt={title} className="rounded-2xl" src={media?.image2x} />
                 </div>
                 <div className="body relative basis-full md:basis-4/12 md:pl-5">
                     <h1 className="text-6xl font-semibold ">{author}</h1>
@@ -33,7 +33,7 @@ export default function AuctionPopularItem({ title, instantPrice, type, highestB
                             <Author image={authorAvatar} title="Creator" text={author} />
                         </div>
                         <div className="basis-5/12 md:basis-1/2">
-                            <Author color={attributes.color} title="Instant Price" text={instantPrice} />
+                            <Author color={attributes?.color} title="Instant Price" text={instantPrice} />
                         </div>
                     </div>
                     <div className="rounded-3xl bg-main-grey p-8 mt-4 text-center">

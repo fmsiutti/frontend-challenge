@@ -20,21 +20,20 @@ export default function AuctionPopular() {
 
     return (
         <>
-            {popularList[selectedPopular] &&
-                <AuctionPopularItem
-                instantPrice={popularList[selectedPopular].instantPrice}
-                highestBid={popularList[selectedPopular].highestBid}
-                stock={popularList[selectedPopular].stock}
-                author={popularList[selectedPopular].author}
-                authorAvatar={popularList[selectedPopular].authorAvatar}
-                createdAt={popularList[selectedPopular].createdAt}
-                likes={popularList[selectedPopular].likes}
-                endsAt={popularList[selectedPopular].endsAt}
-                bidUsers={popularList[selectedPopular].bidUsers}
-                attributes={popularList[selectedPopular].attributes}
-                media={popularList[selectedPopular].media}
-                type={popularList[selectedPopular].type}
-                title={`Amazing digital ${popularList[selectedPopular].type}`} />}
+            <AuctionPopularItem
+                instantPrice={popularList[selectedPopular]?.instantPrice}
+                highestBid={popularList[selectedPopular]?.highestBid}
+                stock={popularList[selectedPopular]?.stock}
+                author={popularList[selectedPopular]?.author}
+                authorAvatar={popularList[selectedPopular]?.authorAvatar}
+                createdAt={popularList[selectedPopular]?.createdAt}
+                likes={popularList[selectedPopular]?.likes}
+                endsAt={popularList[selectedPopular]?.endsAt}
+                bidUsers={popularList[selectedPopular]?.bidUsers}
+                attributes={popularList[selectedPopular]?.attributes}
+                media={popularList[selectedPopular]?.media}
+                type={popularList[selectedPopular]?.type}
+                title={`Amazing digital ${popularList[selectedPopular]?.type}`} />
         </>
     )
 }

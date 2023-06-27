@@ -1,7 +1,78 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ([
-/* 0 */,
+/* 0 */
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
+
+
+console.log('this is happening at least');
+// Import the functions you need from the SDKs you need
+
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyBCcs3ZXPhpSoCHC2Y0L6BJRlzxrvUiiwU",
+  authDomain: "nftmarketplace-4c634.firebaseapp.com",
+  projectId: "nftmarketplace-4c634",
+  storageBucket: "nftmarketplace-4c634.appspot.com",
+  messagingSenderId: "68028829036",
+  appId: "1:68028829036:web:e44ebd5bc745e0f6bab749"
+};
+
+// Initialize Firebase
+(0,firebase_app__WEBPACK_IMPORTED_MODULE_0__.initializeApp)(firebaseConfig);
+try {
+  const messaging = firebase.messaging();
+  const tokenInLocalForage = await localforage.getItem("fcm_token");
+
+  // Return the token if it is alredy in our local storage
+  if (tokenInLocalForage !== null) {
+    console.log({
+      tokenInLocalForage
+    });
+  }
+
+  // Request the push notification permission from browser
+  const status = await Notification.requestPermission();
+  if (status && status === "granted") {
+    // Get new token from Firebase
+    const fcm_token = await messaging.getToken({
+      vapidKey: "BCnhGW4N32RtZYTH27_1zMfrfYMuixyYJxcJv-OQcJoKZkMQmPHjXIjcgDUdbUSH2Z5RICd1wn3c2cMjsvWiO3s"
+    });
+
+    // Set token in our local storage
+    if (fcm_token) {
+      localforage.setItem("fcm_token", fcm_token);
+      console.log({
+        fcm_token
+      });
+    }
+  }
+} catch (error) {
+  console.error(error);
+}
+self.addEventListener('push', function (event) {
+  var data = event.data.json();
+  const title = data.Title;
+  data.Data.actions = data.Actions;
+  const options = {
+    body: data.Message,
+    data: data.Data
+  };
+  event.waitUntil(self.registration.showNotification(title, options));
+});
+self.addEventListener('notificationclick', function (event) {});
+self.addEventListener('notificationclose', function (event) {});
+__webpack_async_result__();
+} catch(e) { __webpack_async_result__(e); } }, 1);
+
+/***/ }),
 /* 1 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
@@ -4049,6 +4120,75 @@ const unwrap = value => reverseTransformCache.get(value);
 /******/ 	}
 /******/ 	
 /************************************************************************/
+/******/ 	/* webpack/runtime/async module */
+/******/ 	(() => {
+/******/ 		var webpackQueues = typeof Symbol === "function" ? Symbol("webpack queues") : "__webpack_queues__";
+/******/ 		var webpackExports = typeof Symbol === "function" ? Symbol("webpack exports") : "__webpack_exports__";
+/******/ 		var webpackError = typeof Symbol === "function" ? Symbol("webpack error") : "__webpack_error__";
+/******/ 		var resolveQueue = (queue) => {
+/******/ 			if(queue && !queue.d) {
+/******/ 				queue.d = 1;
+/******/ 				queue.forEach((fn) => (fn.r--));
+/******/ 				queue.forEach((fn) => (fn.r-- ? fn.r++ : fn()));
+/******/ 			}
+/******/ 		}
+/******/ 		var wrapDeps = (deps) => (deps.map((dep) => {
+/******/ 			if(dep !== null && typeof dep === "object") {
+/******/ 				if(dep[webpackQueues]) return dep;
+/******/ 				if(dep.then) {
+/******/ 					var queue = [];
+/******/ 					queue.d = 0;
+/******/ 					dep.then((r) => {
+/******/ 						obj[webpackExports] = r;
+/******/ 						resolveQueue(queue);
+/******/ 					}, (e) => {
+/******/ 						obj[webpackError] = e;
+/******/ 						resolveQueue(queue);
+/******/ 					});
+/******/ 					var obj = {};
+/******/ 					obj[webpackQueues] = (fn) => (fn(queue));
+/******/ 					return obj;
+/******/ 				}
+/******/ 			}
+/******/ 			var ret = {};
+/******/ 			ret[webpackQueues] = x => {};
+/******/ 			ret[webpackExports] = dep;
+/******/ 			return ret;
+/******/ 		}));
+/******/ 		__webpack_require__.a = (module, body, hasAwait) => {
+/******/ 			var queue;
+/******/ 			hasAwait && ((queue = []).d = 1);
+/******/ 			var depQueues = new Set();
+/******/ 			var exports = module.exports;
+/******/ 			var currentDeps;
+/******/ 			var outerResolve;
+/******/ 			var reject;
+/******/ 			var promise = new Promise((resolve, rej) => {
+/******/ 				reject = rej;
+/******/ 				outerResolve = resolve;
+/******/ 			});
+/******/ 			promise[webpackExports] = exports;
+/******/ 			promise[webpackQueues] = (fn) => (queue && fn(queue), depQueues.forEach(fn), promise["catch"](x => {}));
+/******/ 			module.exports = promise;
+/******/ 			body((deps) => {
+/******/ 				currentDeps = wrapDeps(deps);
+/******/ 				var fn;
+/******/ 				var getResult = () => (currentDeps.map((d) => {
+/******/ 					if(d[webpackError]) throw d[webpackError];
+/******/ 					return d[webpackExports];
+/******/ 				}))
+/******/ 				var promise = new Promise((resolve) => {
+/******/ 					fn = () => (resolve(getResult));
+/******/ 					fn.r = 0;
+/******/ 					var fnQueue = (q) => (q !== queue && !depQueues.has(q) && (depQueues.add(q), q && !q.d && (fn.r++, q.push(fn))));
+/******/ 					currentDeps.map((dep) => (dep[webpackQueues](fnQueue)));
+/******/ 				});
+/******/ 				return fn.r ? promise : getResult();
+/******/ 			}, (err) => ((err ? reject(promise[webpackError] = err) : outerResolve(exports)), resolveQueue(queue)));
+/******/ 			queue && (queue.d = 0);
+/******/ 		};
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	(() => {
 /******/ 		// define getter functions for harmony exports
@@ -4090,59 +4230,11 @@ const unwrap = value => reverseTransformCache.get(value);
 /******/ 	})();
 /******/ 	
 /************************************************************************/
-var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
-(() => {
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
-
-
-// Import the functions you need from the SDKs you need
-
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyBCcs3ZXPhpSoCHC2Y0L6BJRlzxrvUiiwU",
-  authDomain: "nftmarketplace-4c634.firebaseapp.com",
-  projectId: "nftmarketplace-4c634",
-  storageBucket: "nftmarketplace-4c634.appspot.com",
-  messagingSenderId: "68028829036",
-  appId: "1:68028829036:web:e44ebd5bc745e0f6bab749"
-};
-
-// Initialize Firebase
-(0,firebase_app__WEBPACK_IMPORTED_MODULE_0__.initializeApp)(firebaseConfig);
-self.addEventListener('push', function (event) {
-  var data = event.data.json();
-  const title = data.Title;
-  data.Data.actions = data.Actions;
-  const options = {
-    body: data.Message,
-    data: data.Data
-  };
-  event.waitUntil(self.registration.showNotification(title, options));
-});
-self.addEventListener('notificationclick', function (event) {
-  event.notification.close();
-  event.waitUntil(clients.matchAll({
-    type: 'window',
-    includeUncontrolled: true
-  }).then(function (clientList) {
-    if (clientList.length > 0) {
-      let client = clientList[0];
-      for (let i = 0; i < clientList.length; i++) {
-        if (clientList[i].focused) {
-          client = clientList[i];
-        }
-      }
-      return client.focus();
-    }
-    return clients.openWindow('/');
-  }));
-});
-})();
-
+/******/ 	
+/******/ 	// startup
+/******/ 	// Load entry module and return exports
+/******/ 	// This entry module used 'module' so it can't be inlined
+/******/ 	var __webpack_exports__ = __webpack_require__(0);
+/******/ 	
 /******/ })()
 ;

@@ -1,9 +1,8 @@
 'use strict'
-console.log('this is happening at least')
+
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+importScripts("https://www.gstatic.com/firebasejs/7.9.1/firebase-app.js");
+importScripts("https://www.gstatic.com/firebasejs/7.9.1/firebase-messaging.js");
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -16,7 +15,24 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-initializeApp(firebaseConfig);
+firebase.initializeApp(firebaseConfig);
+
+const messaging = firebase.messaging();
+
+  // Request the push notification permission from browser
+  Notification.requestPermission().then(result => {
+    if (result === 'granted'){
+      console.log('here')
+      messaging.getToken({
+        vapidKey: "BCnhGW4N32RtZYTH27_1zMfrfYMuixyYJxcJv-OQcJoKZkMQmPHjXIjcgDUdbUSH2Z5RICd1wn3c2cMjsvWiO3s",
+      }).then(fcm_token => {
+        if (fcm_token) {
+          console.log({fcm_token});
+        }
+      })
+    }
+  })
+
 
 self.addEventListener('push', function (event) {
   var data = event.data.json();

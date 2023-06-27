@@ -5,6 +5,7 @@ import { useEffect } from 'react';
 
 export default function Home() {
   useEffect(() => {
+    
     navigator.serviceWorker.ready.then(registration => {
       registration.pushManager.getSubscription().then(subscription => {
         console.log({subscription})

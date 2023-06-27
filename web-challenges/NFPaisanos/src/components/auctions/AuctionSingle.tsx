@@ -1,15 +1,15 @@
 import Image from 'next/image'
 
-import { Auction } from '../../types'
+import { Auction } from '@/types/Auction'
 
 
 import { Button } from '../common'
 import Author from './Author';
 
-import { toHumanNumber } from '../../utils/numbers.utils';
+import { toHumanNumber } from '@/utils/numbers.utils';
 
-import { useConversion } from '../../store/PriceStore';
-import { useSetSelectedPopular } from '../../store/AuctionStore';
+import { useConversion } from '@/store/PriceStore';
+import { useSetSelectedPopular } from '@/store/AuctionStore';
 
 export default function AuctionPopularItem({ title, instantPrice, type, highestBid, stock, likes, author, authorAvatar, attributes, createdAt, endsAt, media, bidUsers }:Auction) {
 

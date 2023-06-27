@@ -1,8 +1,16 @@
 import dynamic from 'next/dynamic'
 
 import { AuctionPopular } from '@/modules/auctions';
+import { useEffect } from 'react';
 
 export default function Home() {
+  useEffect(() => {
+    navigator.serviceWorker.ready.then(registration => {
+      registration.pushManager.getSubscription().then(subscription => {
+        console.log({subscription})
+      })
+    })
+  }, [])
 
   const DynamicAuctionList = dynamic(() => import('@/modules/auctions/AuctionList'), {
     ssr: false,

@@ -35,7 +35,6 @@ export default function RangeSlider({ min, max, handleChange }:RangeSlider) {
                 } else if (index === 2){
                     classes += ''
                 }
-                console.log({gradientMin, gradientMax})
                 return <div {...props} style={{transition: 'none', background: `linear-gradient( to right, rgb(35, 38, 47) 0%, rgb(35, 38, 47) ${gradientMin}%, rgb(55, 114, 255) ${gradientMin}%, rgb(55, 114, 255) ${gradientMax}%, rgb(35, 38, 47) ${gradientMax}%, rgb(35, 38, 47) 100%)`, clipPath: `url(#clip-path-relative)`}} className={classes} ></div>
             }}
             minDistance={1.5}

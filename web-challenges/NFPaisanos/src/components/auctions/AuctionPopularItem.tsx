@@ -24,7 +24,7 @@ export default function AuctionPopularItem({ title, instantPrice, type, highestB
         <>
             <div className="md:flex justify-between" >
                 <div className="image-container relative basis-full pb-8 md:pb-0 md:basis-7/12 md:pr-7">
-                    <Image priority width={620} height={800} alt={title} className="rounded-2xl" src={media.image2x} />
+                    <Image priority sizes="(min-width: 768px) 20vw, 100vw" width={620} height={800} alt={title} className="rounded-2xl" src={media.image2x} />
                 </div>
                 <div className="body relative basis-full md:basis-4/12 md:pl-5">
                     <h1 className="text-6xl font-semibold ">{author}</h1>

@@ -1,7 +1,21 @@
-import { AuctionList, AuctionPopular } from '@/modules/auctions';
-import { Filters, Categories, SearchBar } from '@/modules/filters';
+import dynamic from 'next/dynamic'
+
+import { AuctionPopular } from '@/modules/auctions';
 
 export default function Home() {
+
+  const DynamicAuctionList = dynamic(() => import('@/modules/auctions/AuctionList'), {
+    ssr: false,
+  })
+  const DynamicSearchBar = dynamic(() => import('@/modules/filters/SearchBar'), {
+    ssr: false,
+  })
+  const DynamicCategories = dynamic(() => import('@/modules/filters/Categories'), {
+    ssr: false,
+  })
+  const DynamicFilters = dynamic(() => import('@/modules/filters/Filters'), {
+    ssr: false,
+  })
 
   return (
     <>
@@ -9,17 +23,17 @@ export default function Home() {
         <AuctionPopular />
       </div>
       <div className="flex container m-auto">
-        <SearchBar />
+        <DynamicSearchBar />
       </div>
       <div className="container m-auto mb-6 mt-4">
-        <Categories />
+        <DynamicCategories />
       </div>
       <div className="md:flex container m-auto">
         <div className="basis-1/4 md:max-w-[25%] md:pr-4">
-          <Filters />
+          <DynamicFilters />
         </div>
         <div className="basis-3/4 md:pl-4">
-          <AuctionList />
+          <DynamicAuctionList />
         </div>
       </div>
     </>

@@ -17,7 +17,7 @@ export default function AuctionList({ title, instantPrice, attributes, type, hig
             <div className="p-3">
                 <div className="image-container relative">
                     <Image width={232} height={288} alt={author} className="rounded-xl w-full" src={media.image} />
-                    <div className="p-3 top-0 badges absolute w-full h-full opacity-0 group-hover:opacity-100">
+                    <div className="p-3 top-0 badges absolute w-full h-full opacity-0 group-hover:opacity-100 bg-white/60">
                         <Badge className="left-3 top-4 p-1.5 absolute" fill={true} content={attributes.type.toUpperCase()} color={attributes.color} />
                         <Favourite className="right-3 absolute" />
                         <div className="absolute bottom-4 w-[60%] left-[20%]">

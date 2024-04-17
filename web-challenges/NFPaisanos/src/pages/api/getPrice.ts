@@ -7,12 +7,12 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Price>
 ) {
-  const response = await fetch('http://challenges.us-east-1.elasticbeanstalk.com/nfpaisanos/eth-price', {
-      headers: {
-            apiKey: `${API_KEY}`,
-      }
-  })
-  const price = await response.json()
+  // const response = await fetch('http://challenges.us-east-1.elasticbeanstalk.com/nfpaisanos/eth-price', {
+  //     headers: {
+  //           apiKey: `${API_KEY}`,
+  //     }
+  // })
+  // const price = await response.json()
 
-  res.status(200).json(price)
+  res.status(200).json({eth: "1", usd: "2951"})
 }

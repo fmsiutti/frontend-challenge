@@ -1,6 +1,8 @@
-const mockAuctions = [
+import { Auction } from "@/types/Auction"
+
+const mockAuctions : Auction[] = [
     {
-        "id": 10,
+        "title": "Digital Art",
         "instantPrice": "4.45 ETH",
         "highestBid": "0.010 ETH",
         "author": "Fernando Medina",
@@ -34,7 +36,7 @@ const mockAuctions = [
         ]
     },
     {
-        "id": 11,
+        "title": "Digital Art",
         "instantPrice": "2.45 ETH",
         "highestBid": "0.100 ETH",
         "author": "Martin Acosta",
@@ -68,7 +70,7 @@ const mockAuctions = [
         ]
     },
     {
-        "id": 12,
+        "title": "Digital Art",
         "instantPrice": "2.15 ETH",
         "highestBid": "0.500 ETH",
         "author": "Santiago Lopez",
@@ -102,7 +104,7 @@ const mockAuctions = [
         ]
     },
     {
-        "id": 13,
+        "title": "Digital Art",
         "instantPrice": "10.05 ETH",
         "highestBid": "1.500 ETH",
         "author": "Santiago Echazu",
@@ -146,7 +148,7 @@ const mockAuctions = [
         ]
     },
     {
-        "id": 14,
+        "title": "Digital Art",
         "instantPrice": "1.05 ETH",
         "highestBid": "0.40 ETH",
         "author": "Alvaro Echazu",
@@ -180,7 +182,7 @@ const mockAuctions = [
         ]
     },
     {
-        "id": 15,
+        "title": "Digital Art",
         "instantPrice": "1.30 ETH",
         "highestBid": "0.022 ETH",
         "author": "Sofia Coolen",
@@ -214,7 +216,7 @@ const mockAuctions = [
         ]
     },
     {
-        "id": 16,
+        "title": "Digital Art",
         "instantPrice": "6.52 ETH",
         "highestBid": "0.031 ETH",
         "author": "Flora Quiroga",
@@ -248,7 +250,7 @@ const mockAuctions = [
         ]
     },
     {
-        "id": 17,
+        "title": "Digital Art",
         "instantPrice": "0.002 ETH",
         "highestBid": "0.00005 ETH",
         "author": "María Del Mar Gestoso",
@@ -271,7 +273,7 @@ const mockAuctions = [
         "bidUsers": []
     },
     {
-        "id": 18,
+        "title": "Digital Art",
         "instantPrice": "0.028 ETH",
         "highestBid": "0.00052 ETH",
         "author": "Julian Cerino",
@@ -300,7 +302,7 @@ const mockAuctions = [
         ]
     },
     {
-        "id": 19,
+        "title": "Digital Art",
         "instantPrice": "1.00 ETH",
         "highestBid": "0.012 ETH",
         "author": "Martin Russo",
@@ -334,7 +336,7 @@ const mockAuctions = [
         ]
     },
     {
-        "id": 20,
+        "title": "Digital Art",
         "instantPrice": "3.00 ETH",
         "highestBid": "0.21 ETH",
         "author": "Belen Lago",

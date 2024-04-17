@@ -5,3 +5,9 @@ export const compareDates = (dateA:string, dateB:string, direction:number):numbe
         return new Date(dateB).getTime() - new Date(dateA).getTime()
     }
 }
+
+export const dateDiff = (dateA:Date, dateB:Date):Date => {
+    const diff = dateA.getDate() - dateB.getDate()
+    console.log({diff})
+    return new Date(diff)
+}
